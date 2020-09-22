@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+<h1>Cover Letter Generator</h1>
+Please fill out the following information.
+    <form id="inputForm">
+        <h2>Date</h2>
+        <label for="DayDate">Today's Date</label>
+        <input type="number" id="DayDate" name="DayDate">
+
+        <label for="month">Current Month</label>
+        <select name="month" id="Month">
+            <option value="jan">Jan.</option>
+            <option value="feb">Feb.</option>
+            <option value="mar">Mar.</option>
+            <option value="apr">Apr.</option>
+            <option value="may">May</option>
+            <option value="jun">Jun.</option>
+            <option value="jul">Jul.</option>
+            <option value="aug">Aug.</option>
+            <option value="sep">Sept.</option>
+            <option value="oct">Oct.</option>
+            <option value="nov">Nov.</option>
+            <option value="dec">Dec.</option>
+        </select><br>
+
+        <h2>Adressee</h2>
+        Do you know who this is going to?
+        <input type="radio" id="addresseeBoolean" name="addresseeBoolean" value="Yes">
+        <label for="addresseeBoolean">Yes</label>
+        <input type="radio" id="addresseeBoolean" name="addresseeBoolean" value="No">
+        <label for="addresseeBoolean">No</label><br><br>
+
+        <label for="title">Addressee Title</label>
+        <select name="title" id="title">
+            <option value="mr">Mr.</option>
+            <option value="ms">Ms.</option>
+            <option value="null">None</option>
+        </select><br>
+
+        <label for="month">Addressee Name</label>
+        <input type="text" id="addresseeLastName" name="addresseeLastName">
+        <input type="text" id="addresseeFirstName" name="addresseeFirstName"> <br>
+
+        <label for="month">Addressee Job Title (If known)</label>
+        <input type="text" id="addresseeJobTitle" name="addresseeJobTitle">
+
+        <h2>Company Information</h2>
+        <label for="month">Company Name</label>
+        <input type="text" id="companyName" name="companyName"><br><br>
+
+        <b>Company Address</b><br>
+        <label for="month">Company Street Address</label>
+        <input type="text" id="companyAddress" name="companyAddress"><br>
+
+        <label for="month">Company City, State, Zip</label>
+        <input type="text" id="companyAddressTwo" name="companyAddressTwo">
+
+
+        <button type="button" onclick="getData()">Generate Cover Letter</button>
+    </form>
+
+
+
+
+</body>
+
+<script>
+
+    function getData() {
+        console.log( Array.from(document.querySelectorAll('#inputForm input')).reduce((acc, input) => ({...acc, [input.id]: input.value}), {}))
+
+        Array.from(document.querySelectorAll('#inputForm input')).reduce((acc, input) => ({...acc, [input.id]: input.value}), {});
+
+
+    }
+
+ </script>
+
+</html>
